@@ -1,0 +1,14 @@
+﻿@model Clothes
+
+<div class="col-lg-4">
+    <img class="img-thumbnail" src="@Model.Img" alt="@Model.Name" />
+    <h2>Cloth: @Model.Name</h2>
+    <p>Descri[tion]:</p>
+    @foreach (var line in @Model.Description.Split('\n'))
+    {
+        <p>@line</p>
+    }
+    <p>Ціна: @Model.Price</p>
+    <p><a class="btn btn-warning" asp-controller="ShopCart" asp-action="AddToCart" asp-route-id="@Model.Id">Add to cart</a></p>
+</div>
+
